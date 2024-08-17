@@ -1,1 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.rounded {
+  border-radius: 18px !important;
+}
+.card-container {
+  width: 240px;
+  font-size: 75px;
+  height: 100%;
+}
