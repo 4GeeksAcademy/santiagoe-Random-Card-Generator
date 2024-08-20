@@ -12,5 +12,16 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-success"></body>
+  <body onload="randomCard()" class="bg-success">
+    <div class="d-flex flex-column align-items-center">
+      <div id="card" class="bg-light mb-3 mt-5 text-center rounded">
+        <div id="suit-top" class="text-start ps-3"></div>
+        <div id="card-number"></div>
+        <div id="suit-bottom" class="text-end pe-3"></div>
+      </div>
+      <button type="button" class="btn btn-dark mb-3" onclick="randomCard()">
+        Get a new card
+      </button>
+    </div>
+  </body>
 </html>

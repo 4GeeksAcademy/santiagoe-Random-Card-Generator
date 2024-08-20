@@ -1,7 +1,7 @@
 import "bootstrap";
 import "./style.css";
 
-window.onload = function() {
+window.randomCard = function randomCard() {
   let suits = ["♥", "♠", "♣", "♦"];
   let cardNumber = [
     "A",
@@ -23,24 +23,19 @@ window.onload = function() {
   let cardNumberRandom =
     cardNumber[Math.floor(Math.random() * cardNumber.length)];
 
-  document.querySelector("body").innerHTML = `
-    <div class="d-flex justify-content-center mt-5">
-      <div class="bg-light card-container  text-center rounded">
-        <div class="text-start ps-3">
-          ${
-            suitRandom == "♦" || suitRandom == "♥"
-              ? `<p class= "text-danger">${suitRandom}</p>`
-              : `<p>${suitRandom}</p>`
-          }
-        </div>
-        <p>${cardNumberRandom}</p>
-        <div class="text-end pe-3">
-          ${
-            suitRandom == "♦" || suitRandom == "♥"
-              ? `<p class= "text-danger mb-1">${suitRandom}</p>`
-              : `<p>${suitRandom}</p>`
-          }
-        </div>
-      </div>
-    </div>`;
+  document.getElementById("suit-top").innerHTML = `${
+    suitRandom == "♦" || suitRandom == "♥"
+      ? `<p class= "text-danger">${suitRandom}</p>`
+      : `<p>${suitRandom}</p>`
+  }`;
+
+  document.getElementById(
+    "card-number"
+  ).innerHTML = `<p>${cardNumberRandom}</p>`;
+
+  document.getElementById("suit-bottom").innerHTML = `${
+    suitRandom == "♦" || suitRandom == "♥"
+      ? `<p class= "text-danger mb-1">${suitRandom}</p>`
+      : `<p class= "mb-1">${suitRandom}</p>`
+  }`;
 };
